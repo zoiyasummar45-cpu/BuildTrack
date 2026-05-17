@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 /**
  * Project: BuildTrack - Construction Management System
  * Current State: Legacy Code (Messy Version)
