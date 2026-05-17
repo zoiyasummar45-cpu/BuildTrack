@@ -1,6 +1,7 @@
 public class Material extends Resource {
     private int quantity;
     private double unitPrice;
+    private static final double TAX_RATE = 0.05;
 
     public Material(String name, int id, int quantity, double unitPrice) {
         super(name, id);
@@ -8,8 +9,13 @@ public class Material extends Resource {
         this.unitPrice = unitPrice;
     }
 
+    // Encapsulation: Accessors for File I/O operations
+    public int getQuantity() { return quantity; }
+    public double getUnitPrice() { return unitPrice; }
+
     @Override
     public double calculateTotalValue() {
-        return quantity * unitPrice * 1.05; // 5% tax included
+        double subTotal = quantity * unitPrice;
+        return subTotal + (subTotal * TAX_RATE);
     }
 }
